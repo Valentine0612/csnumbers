@@ -7,7 +7,6 @@ service/manage.py.save
 service/static/
 Pipfile
 Pipfile.lock
-service/service/settings.py
 service/db.sqlite3
 service/backend/migrations
 
