@@ -1,0 +1,25 @@
+.popupEnter {
+    opacity: 0;
+}
+
+.popupEnterActive {
+    opacity: 1;
+    transition: 200ms ease-in;
+}
+
+.popupExit {
+    opacity: 1;
+}
+
+.popupExitActive {
+    opacity: 0;
+    transition: 200ms ease-in;
+}
+
+// .popupEnter {
+//     opacity: 1;
+// }
+
+// .popupExit {
+//     opacity: 0;
+// }

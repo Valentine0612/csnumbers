@@ -1,0 +1,14 @@
+.view {
+    position: relative;
+}
+
+.viewAndPopup {
+    flex-grow: 1;
+}
+
+@media (max-width: 940px) {
+    .view {
+        padding-top: 60px;
+        height: auto;
+    }
+}

@@ -1,0 +1,149 @@
+@import "../../../defaultStyles/input-text.scss";
+@import "../../../defaultStyles/colors.scss";
+@import "../../../defaultStyles/button.scss";
+
+.input {
+    @include input-text;
+    margin-bottom: 20px;
+}
+
+.errorInput {
+    @include error-input-text;
+    margin-bottom: 20px;
+}
+
+.flexBox {
+    display: flex;
+    align-items: flex-start;
+
+    .imageBlock,
+    .errorImageBlock {
+        position: relative;
+        border-radius: 10px;
+        border: 2px solid transparent;
+        margin-right: 20px;
+        width: 132px;
+
+        &:hover {
+            .imageInputLabel {
+                display: flex;
+            }
+        }
+
+        .imageInput {
+            display: none;
+        }
+
+        .imageInputLabel {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            color: transparent;
+            transition: 0.3s;
+
+            &:hover {
+                color: white;
+                background-color: rgba($color: black, $alpha: 0.4);
+            }
+        }
+    }
+
+    .errorImageBlock {
+        border-color: $orange-color;
+    }
+
+    .inputsBlock {
+        flex-grow: 1;
+    }
+}
+
+.customSelect {
+    margin-bottom: 20px;
+
+    .selectedOption {
+        @include input-text;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .selectedOptionArrow,
+        .selectedOptionArrowOpened {
+            transition: 0.5s;
+        }
+
+        .selectedOptionArrowOpened {
+            transform: rotate(180deg);
+        }
+    }
+
+    .optionsBlock {
+        max-height: 200px;
+        overflow-y: auto;
+    }
+
+    .option {
+        padding: 10px 30px;
+        background-color: #010029;
+        font-weight: bold;
+        text-align: left;
+        cursor: pointer;
+
+        &:nth-child(2n) {
+            background-color: #030246;
+        }
+    }
+}
+
+.buttonsBlock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .submitButton,
+    .deleteButton {
+        @include button;
+        min-width: 200px;
+        margin-right: 20px;
+    }
+
+    .deleteButton {
+        background-color: rgba($color: $orange-color, $alpha: 0.4);
+    }
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+
+    input {
+        display: block;
+        margin-right: 10px;
+    }
+
+    label {
+        display: block;
+        font-weight: bold;
+    }
+}
+
+@media (max-width: 640px) {
+    .flexBox {
+        flex-direction: column;
+        width: 100%;
+
+        .inputsBlock {
+            width: 100%;
+        }
+
+        .imageBlock {
+            margin: 0 auto 20px;
+        }
+    }
+}

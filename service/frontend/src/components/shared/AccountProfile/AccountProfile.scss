@@ -1,0 +1,185 @@
+@import "../../../defaultStyles/input-text.scss";
+@import "../../../defaultStyles/colors.scss";
+@import "../../../defaultStyles/button.scss";
+
+.accountProfile {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.avatarWrapper {
+    width: 128px;
+    height: 128px;
+    position: relative;
+    padding-bottom: 128px;
+    border-radius: 4px;
+    margin-right: 20px;
+    overflow: hidden;
+
+    &:hover {
+        .avatarLabel {
+            display: flex;
+        }
+    }
+
+    .avatarImage,
+    .avatarLabel {
+        position: absolute;
+        border-radius: 4px;
+    }
+
+    .avatarLabel {
+        width: 100%;
+        height: 100%;
+    }
+
+    .avatarImage {
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        height: 100%;
+        transform: translate(-50%, -50%);
+    }
+
+    .avatarFileInput {
+        opacity: 0;
+        position: absolute;
+        pointer-events: none;
+        width: 1px;
+        height: 1px;
+    }
+
+    .avatarLabel {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        font-size: 50px;
+        color: transparent;
+        transition: 0.3s;
+
+        &:hover {
+            color: white;
+            background-color: rgba($color: black, $alpha: 0.4);
+        }
+    }
+}
+
+.infoBlock {
+    flex-grow: 1;
+
+    .usernameInputText {
+        @include input-text;
+        padding: 10px 20px;
+        margin-bottom: 20px;
+        font-size: 1.2em;
+        color: $orange-color;
+        border: 1px solid rgba($color: white, $alpha: 0.5);
+        background-color: transparent;
+
+        &:focus {
+            border-color: rgba($color: white, $alpha: 0.5);
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.promoInfo {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+
+    .promoInfoText {
+        margin-left: 20px;
+        text-align: center;
+
+        span {
+            color: $orange-color;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-left: 0.32em;
+        }
+    }
+
+    .promoButton {
+        @include button;
+    }
+}
+
+.inputText {
+    @include input-text;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: $orange-color;
+    border: 1px solid rgba($color: white, $alpha: 0.5);
+    background-color: transparent;
+
+    &:focus {
+        border-color: rgba($color: white, $alpha: 0.5);
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &::placeholder {
+        color: rgba($color: white, $alpha: 0.2);
+    }
+}
+
+.inputLabel {
+    font-weight: bold;
+}
+
+.passwordReset {
+    background-color: rgba($color: white, $alpha: 0.1);
+    padding: 20px 12px;
+    border-radius: 8px;
+}
+
+.saveButton {
+    @include button;
+    position: relative;
+    margin: 20px auto 0;
+}
+
+.preloader {
+    position: absolute;
+    top: 12px;
+    right: -30px;
+}
+
+@media (max-width: 640px) {
+    .accountProfile {
+        display: block;
+
+        .avatarWrapper {
+            margin: 0 auto 20px;
+        }
+
+        .infoBlock {
+            display: flex;
+            width: 100%;
+            flex-direction: column-reverse;
+
+            .promoInfo {
+                flex-direction: column-reverse;
+                margin-bottom: 20px;
+
+                .promoInfoText {
+                    margin-left: 0;
+                    margin-bottom: 10px;
+                }
+
+                .promoButton {
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,67 @@
+@import "../../../defaultStyles/button.scss";
+@import "../../../defaultStyles/input-text.scss";
+@import "../../../defaultStyles/colors.scss";
+
+.avatarWrapper {
+    width: 120px;
+    padding-bottom: 120px;
+    position: relative;
+    margin: 0 auto 20px;
+    border-radius: 5px;
+
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+    }
+}
+
+.info {
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 4px;
+
+    span {
+        color: $orange-color;
+    }
+}
+
+.infoInput {
+    text-align: left;
+
+    label {
+        display: block;
+        color: $orange-color;
+        font-weight: bold;
+        margin-bottom: 4px;
+    }
+
+    input {
+        @include input-text;
+        margin-bottom: 12px;
+    }
+}
+
+.checkboxBlock {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4px;
+
+    input {
+        display: block;
+        margin-right: 6px;
+    }
+
+    label {
+        display: block;
+        font-weight: bold;
+    }
+}
+
+.button {
+    @include button;
+    margin: 0 auto;
+}

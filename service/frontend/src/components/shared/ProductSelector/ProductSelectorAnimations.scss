@@ -1,0 +1,10 @@
+.selectorItemAppear {
+    max-height: 0;
+    opacity: 0;
+}
+
+.selectorItemAppearActive {
+    opacity: 1;
+    max-height: 300px;
+    transition: 500ms;
+}

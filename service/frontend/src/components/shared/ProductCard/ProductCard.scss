@@ -1,0 +1,69 @@
+@import "../../../defaultStyles/button.scss";
+@import "../../../defaultStyles/colors.scss";
+
+.item {
+    display: flex;
+}
+
+.rightBlock {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.price {
+    display: block;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: $orange-color;
+}
+
+.productImage {
+    width: 100px;
+    margin-right: 16px;
+}
+
+.buttonsBlock {
+    display: flex;
+
+    & > * {
+        margin-right: 12px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.button {
+    @include button;
+    width: 100%;
+
+    &:hover {
+        background-color: $dark-orange-color;
+    }
+}
+
+@media (max-width: 500px) {
+    .item {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+
+    .rightBlock {
+        align-items: center;
+        text-align: center;
+    }
+
+    .productImage {
+        margin-bottom: 10px;
+    }
+
+    .button {
+        @include button;
+        width: unset;
+        margin-top: 10px;
+    }
+}

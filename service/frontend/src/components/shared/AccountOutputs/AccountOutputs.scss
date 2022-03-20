@@ -1,0 +1,26 @@
+@import "../../../defaultStyles/colors.scss";
+
+.table {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 40px;
+
+    th,
+    td {
+        width: calc(100% / 3);
+        padding: 6px 10px;
+
+        span {
+            color: $orange-color;
+            // font-weight: bold;
+        }
+    }
+
+    th {
+        padding-top: 0;
+    }
+
+    .action {
+        cursor: pointer;
+    }
+}

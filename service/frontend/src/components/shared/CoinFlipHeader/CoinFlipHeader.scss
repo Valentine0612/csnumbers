@@ -1,0 +1,90 @@
+@import "../../../defaultStyles/colors.scss";
+@import "../../../defaultStyles/button.scss";
+
+.coinFlipStats {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $bg-main-color;
+    padding: 20px 30px;
+    border: 1px solid $orange-color;
+    border-right: none;
+    text-align: center;
+    z-index: 40;
+}
+
+.stats,
+.statsAndButton {
+    display: flex;
+    align-items: center;
+}
+
+.button {
+    @include button;
+    box-shadow: -4px 4px 16px rgba($color: white, $alpha: 0.5);
+    margin-left: 40px;
+
+    &:hover {
+        background-color: $orange-color;
+        box-shadow: -4px 4px 16px rgba($color: white, $alpha: 0.8);
+    }
+}
+
+.statsItem {
+    margin-right: 30px;
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 940px) {
+    .coinFlipStats,
+    .statsAndButton {
+        flex-direction: column;
+    }
+
+    .statsAndButton,
+    .stats,
+    .button {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .coinFlipStats {
+        position: relative;
+        border: none;
+        background-color: transparent;
+        padding: 0;
+    }
+
+    .stats {
+        margin-bottom: 20px;
+        justify-content: space-between;
+        background-color: $bg-main-color;
+        padding: 10px 60px;
+        border: 1px solid $orange-color;
+        margin-bottom: 20px;
+    }
+
+    .button {
+        box-shadow: -4px 4px 16px rgba($color: white, $alpha: 0.3);
+
+        &:hover {
+            box-shadow: -4px 4px 16px rgba($color: white, $alpha: 0.5);
+        }
+    }
+
+    .statsItem {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 510px) {
+    .stats {
+        font-size: 0.8em;
+        padding: 10px 30px;
+    }
+}

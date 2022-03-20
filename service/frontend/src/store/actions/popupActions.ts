@@ -1,0 +1,4 @@
+const OPEN_POPUP = "OPEN_POPUP";
+const CLOSE_POPUP = "CLOSE_POPUP";
+
+export { OPEN_POPUP, CLOSE_POPUP };

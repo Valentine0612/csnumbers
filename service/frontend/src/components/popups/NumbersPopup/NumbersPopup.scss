@@ -1,0 +1,178 @@
+@import "../../../defaultStyles/colors.scss";
+@import "../../../defaultStyles/button.scss";
+
+.title {
+    margin-bottom: 16px;
+    text-align: left;
+}
+
+.fieldsBlock,
+.playersBlock {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+
+    & > * {
+        width: calc(50% - 10px);
+        margin-right: 60px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.waitingOponent {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2em;
+    background-color: rgba($color: white, $alpha: 0.1);
+    border-radius: 10px;
+
+    .player {
+        background-color: transparent;
+    }
+}
+
+.player {
+    background-color: rgba($color: white, $alpha: 0.1);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.product {
+    padding: 0 10px;
+}
+
+.player,
+.product {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 16px;
+
+    .avatarWrapper,
+    .productWrapper {
+        min-width: 80px;
+        width: 20%;
+        margin-right: 20px;
+    }
+
+    .productInfoTop {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    .productInfo {
+        flex-grow: 1;
+        text-align: left;
+    }
+
+    .playerName,
+    .productInfoName,
+    .productInfoPrice {
+        font-weight: bold;
+        font-size: 1.2em;
+    }
+
+    .productInfoPrice {
+        color: $orange-color;
+    }
+}
+
+.gameFiedlBlockWithoutProduct {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.productSelectorBlock {
+    background-color: rgba($color: white, $alpha: 0.1);
+    padding: 16px;
+    border-radius: 10px;
+
+    .productSelectorTitle {
+        text-align: left;
+        font-weight: 1.2em;
+        font-weight: bold;
+    }
+
+    .productSelector {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        column-gap: 20px;
+        row-gap: 20px;
+        margin-bottom: 12px;
+    }
+
+    .joinGameButton {
+        @include button;
+    }
+}
+
+.loginBlock {
+    .loginBlockTitle {
+        font-weight: bold;
+        margin-bottom: 20px;
+        font-size: 1.1em;
+    }
+
+    .loginBlockButton {
+        @include button;
+        margin: 0 auto;
+        min-width: 120px;
+    }
+}
+
+.mobileUser {
+    display: none;
+}
+
+@media (max-width: 800px) {
+    .playersBlockWrapper {
+        display: none;
+    }
+
+    .fieldsBlock {
+        display: block;
+
+        & > * {
+            width: 100%;
+            margin-bottom: 40px;
+
+            &:last-child {
+                margin-right: 0;
+                margin-bottom: 0px;
+            }
+        }
+    }
+
+    .mobileUser {
+        display: block;
+    }
+}
+
+@media (max-width: 450px) {
+    // .product,
+    // .productInfo {
+    //     display: block !important;
+    // }
+
+    .product * {
+        text-align: center !important;
+    }
+
+    // .product > * {
+    //     margin: 0 auto 12px !important;
+    // }
+
+    .productInfoTop {
+        flex-direction: column-reverse;
+
+        & > * {
+            margin-right: auto !important;
+            margin-left: auto !important;
+        }
+    }
+}

@@ -1,0 +1,21 @@
+.RouteEnter {
+    opacity: 0;
+    transform: translateX(30%);
+}
+
+.RouteEnterActive {
+    opacity: 1;
+    transform: translateX(0%);
+    transition: 300ms;
+}
+
+.RouteExit {
+    opacity: 1;
+    transform: translateX(0%);
+}
+
+.RouteExitActive {
+    opacity: 0;
+    transform: translateX(-30%);
+    transition: 300ms;
+}

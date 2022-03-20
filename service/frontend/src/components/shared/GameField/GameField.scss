@@ -1,0 +1,44 @@
+@import "../../../defaultStyles/colors.scss";
+
+.gameField {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 20px;
+    column-gap: 10%;
+
+    .fieldItem {
+        position: relative;
+        height: 0;
+        width: 100%;
+        padding-bottom: 100%;
+        border-radius: 50%;
+        margin: 0 auto;
+
+        .fieldCoin,
+        .fieldCoinChoosen {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            border-radius: 50%;
+            box-shadow: 0px 4px 20px rgba(255, 255, 255, 0.25);
+        }
+
+        .fieldCoinChoosen {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 4.2em;
+            border: 4px solid #c0892f;
+            color: $orange-color;
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .fieldCoinChoosen {
+        font-size: 3em !important;
+    }
+}

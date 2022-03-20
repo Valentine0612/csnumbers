@@ -1,0 +1,126 @@
+@import "../../../defaultStyles/colors.scss";
+@import "../../../defaultStyles/customIcons.scss";
+
+@mixin listItem {
+    display: flex;
+    align-items: center;
+    padding: 12px 30px 12px 34px;
+    // margin-right: 10px;
+    // justify-content: flex-start;
+    justify-content: center;
+    // transition: 1s;
+
+    span {
+        max-width: 160px;
+        white-space: nowrap;
+        visibility: visible;
+        overflow-x: hidden;
+        opacity: 1;
+        margin-left: 20px;
+
+        transition: max-width 0.5s, visibility 0.5s, opacity 0.5s, margin-left 0.5s;
+    }
+}
+
+@mixin selectedItem {
+    @include listItem;
+    padding: 12px 30px;
+    border-left: 4px solid $orange-color;
+    color: $bg-main-color;
+    background-color: white;
+}
+
+@mixin rolledUpItem {
+    @include listItem;
+    justify-content: center;
+
+    span {
+        max-width: 0;
+        visibility: hidden;
+        opacity: 0;
+        margin-left: 0px;
+    }
+}
+
+@mixin rolledUpSelectedItem {
+    @include selectedItem;
+
+    span {
+        max-width: 0;
+        visibility: hidden;
+        opacity: 0;
+        margin-left: 0px;
+    }
+}
+
+.rolledUpNavigation {
+    .listItem,
+    .listItem:hover {
+        @include rolledUpItem;
+    }
+
+    .listItemSelected,
+    .listItemSelected:hover {
+        @include rolledUpSelectedItem;
+    }
+}
+
+.listItem,
+.logoutItem {
+    @include listItem;
+
+    &:hover {
+        @include selectedItem;
+        background-color: rgba($color: white, $alpha: 0.5);
+        border-color: rgba($color: $orange-color, $alpha: 0.5);
+
+        .customIcon {
+            background-color: $bg-main-color;
+            color: rgba($color: white, $alpha: 0.5);
+        }
+    }
+}
+
+.listItemSelected {
+    @include selectedItem;
+
+    .customIcon {
+        @include customIcon;
+        background-color: $bg-main-color;
+        color: white;
+    }
+}
+
+.customIcon {
+    @include customIcon;
+}
+
+.fontAwesomeIcon {
+    @include fontAwesomeIcon;
+}
+
+.logoutItem {
+    display: none;
+}
+
+.list {
+    margin: 0;
+}
+
+@media (max-width: 940px) {
+    .logoutItem {
+        display: flex;
+    }
+
+    .rolledUpNavigation {
+        .listItem,
+        .listItem:hover {
+            @include listItem;
+        }
+
+        .listItemSelected,
+        .listItemSelected:hover {
+            @include selectedItem;
+        }
+    }
+}

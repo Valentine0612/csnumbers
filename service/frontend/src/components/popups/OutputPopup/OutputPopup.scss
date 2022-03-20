@@ -1,0 +1,136 @@
+@import "../../../defaultStyles/colors.scss";
+@import "../../../defaultStyles/button.scss";
+@import "../../../defaultStyles/input-text.scss";
+
+.main {
+    display: flex;
+    align-items: flex-start;
+
+    .navbar {
+        margin: 0;
+        width: 20%;
+        margin-right: 20px;
+
+        li {
+            text-align: left;
+            font-weight: bold;
+            border-bottom: 1px solid $orange-color;
+            padding: 16px 20px;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        li:hover,
+        li.selectedItem {
+            background-color: rgba($color: white, $alpha: 0.1);
+        }
+    }
+
+    .window {
+        flex-grow: 1;
+    }
+}
+
+.topBlock {
+    display: flex;
+    justify-content: flex-end;
+    align-items: stretch;
+    margin-bottom: 20px;
+
+    input {
+        @include input-text;
+        flex-grow: 1;
+    }
+
+    button {
+        @include button;
+        min-width: 200px;
+        margin-left: 20px;
+    }
+}
+
+.productSelectorTitle {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    font-weight: bold;
+    text-align: left;
+}
+
+.productSelector {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    column-gap: 20px;
+    row-gap: 20px;
+}
+
+.walletInput {
+    @include input-text;
+    margin-bottom: 20px;
+}
+
+.walletSelector {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    column-gap: 20px;
+    row-gap: 20px;
+
+    .walletSelectorItem,
+    .walletSelectorSelectedItem {
+        padding: 20px;
+        border-radius: 5px;
+        transition: 0.3s;
+        cursor: pointer;
+        background-color: rgba($color: white, $alpha: 0.05);
+        border: 1px solid rgba($color: white, $alpha: 0.4);
+    }
+
+    .walletSelectorSelectedItem,
+    .walletSelectorItem:hover {
+        background-color: rgba($color: $orange-color, $alpha: 0.05);
+        border: 1px solid rgba($color: $orange-color, $alpha: 0.4);
+    }
+}
+
+@media (max-width: 800px) {
+    .main {
+        display: block;
+
+        .navbar {
+            display: flex;
+            align-items: stretch;
+            margin-bottom: 20px;
+
+            li {
+                padding: 16px 32px;
+                border-bottom: none;
+                border-right: 1px solid $orange-color;
+
+                &:last-child {
+                    border-right: none;
+                }
+            }
+        }
+    }
+
+    .topBlock {
+        display: block;
+
+        input {
+            margin-bottom: 20px;
+        }
+
+        button {
+            width: 100%;
+            margin: 0 auto;
+        }
+    }
+
+    .productSelectorTitle {
+        display: none;
+    }
+
+    .productSelector {
+        margin-top: 20px;
+    }
+}

@@ -1,0 +1,55 @@
+@import "../../../defaultStyles/button.scss";
+@import "../../../defaultStyles/colors.scss";
+
+.view {
+    min-height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px 20px;
+}
+
+.mainWindow {
+    flex-grow: 1;
+    margin-top: 20px;
+    background-color: $bg-main-color;
+
+    .navigationBlock {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        background-color: rgba($color: white, $alpha: 0.05);
+
+        .navigationItem,
+        .navigationItemSelected {
+            text-align: center;
+            font-weight: bold;
+            padding: 20px 30px;
+        }
+
+        .navigationItemSelected {
+            background-color: $bg-main-color;
+            color: $orange-color;
+        }
+    }
+
+    .windowBlock {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 940px) {
+    .view {
+        padding: 20px 20px 0;
+    }
+}
+
+@media (max-width: 500px) {
+    .navigationBlock {
+        display: block !important;
+
+        .navigationItem,
+        .navigationItemSelected {
+            width: 100%;
+        }
+    }
+}

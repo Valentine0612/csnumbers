@@ -1,0 +1,14 @@
+node_modules
+**/package-lock.json
+service/frontend/static
+__pycache__
+requiremets.txt
+service/manage.py.save
+service/static/
+Pipfile
+Pipfile.lock
+service/service/settings.py
+service/db.sqlite3
+service/backend/migrations
+
+.vscode

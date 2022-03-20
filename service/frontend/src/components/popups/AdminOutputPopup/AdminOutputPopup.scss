@@ -1,0 +1,39 @@
+@import "../../../defaultStyles/button.scss";
+
+.infoBlock {
+    text-align: left;
+    margin-bottom: 8px;
+    font-size: 1.2em;
+}
+
+.buttonsBlock {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+    button {
+        @include button;
+        margin-right: 10px;
+        width: 160px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .buttonsBlock {
+        display: block;
+
+        button {
+            width: 100%;
+            margin-right: 0;
+            margin-bottom: 8px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

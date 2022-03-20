@@ -1,0 +1,155 @@
+@import "../../../defaultStyles/button.scss";
+@import "../../../defaultStyles/colors.scss";
+
+.game {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    padding: 15px 30px;
+    box-sizing: content-box;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &:nth-child(2n) {
+        background-color: rgba($color: #ffffff, $alpha: 0.05);
+    }
+}
+
+.images {
+    display: flex;
+    align-items: center;
+
+    .usersBlock,
+    .gunsBlock {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 20px;
+
+        & > * {
+            margin-right: 10px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    .userImageWrapper,
+    .gunImageWrapper {
+        width: 60px;
+    }
+
+    .usersBlock {
+        width: 160px;
+
+        .vsBlock {
+            font-weight: bold;
+            text-align: center;
+            color: $orange-color;
+            width: 20px;
+        }
+    }
+}
+
+.rightBlock {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .priceInfo {
+        text-align: center;
+        margin-right: 60px;
+
+        .mainPrice {
+            display: block;
+            font-weight: bold;
+            font-size: 1.2em;
+
+            span {
+                color: $orange-color;
+            }
+        }
+    }
+
+    .button {
+        @include button;
+        position: relative;
+        min-width: 160px;
+        background-color: rgba($color: $orange-color, $alpha: 0.5);
+        z-index: 11;
+        box-shadow: 0px 6px 16px rgba($orange-color, 0.3);
+
+        &:hover {
+            background-color: rgba($color: $orange-color, $alpha: 0.2);
+        }
+
+        // &::after {
+        //     position: absolute;
+        //     top: -10px;
+        //     left: -30px;
+        //     display: block;
+        //     content: "";
+        //     width: calc(100% + 300px);
+        //     height: calc(100% + 30px);
+        //     transform: skew(-35deg);
+        //     background: linear-gradient(
+        //         180deg,
+        //         rgba(255, 138, 0, 0.3) -46%,
+        //         rgba(255, 138, 0, 0) 100%
+        //     );
+        // }
+    }
+
+    // .buttonShadow {
+    //     position: absolute;
+    //     content: "";
+    //     width: 320px;
+    //     right: 0;
+    //     top: 0;
+    //     z-index: 10;
+    // }
+}
+
+@media (max-width: 940px) {
+    .game {
+        display: block;
+        height: auto;
+        background-color: rgba($color: white, $alpha: 0.1);
+        padding: 20px 30px;
+        border-radius: 10px;
+        margin-bottom: 0;
+    }
+
+    .priceInfo,
+    .gunsBlock,
+    .usersBlock {
+        margin-right: 0 !important;
+    }
+
+    .rightBlock {
+        display: block;
+    }
+
+    // .buttonShadow {
+    //     display: none;
+    // }
+
+    .images {
+        flex-direction: column;
+    }
+
+    .priceInfo,
+    .gunsBlock,
+    .usersBlock {
+        margin-bottom: 12px;
+    }
+
+    .button {
+        width: 100%;
+    }
+}

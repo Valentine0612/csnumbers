@@ -1,0 +1,75 @@
+@import "../../../defaultStyles/colors.scss";
+
+@mixin imageBlock {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 100%;
+    width: 100%;
+    border-radius: 10px;
+
+    background: radial-gradient(
+        102.58% 102.58% at 50% 50%,
+        rgba(1, 0, 53, 0.5),
+        rgba(1, 0, 41, 0.75)
+    );
+
+    .image {
+        position: absolute;
+        width: calc(100% - 10px);
+        height: calc(100% - 10px);
+        top: 5px;
+        left: 5px;
+    }
+
+    span {
+        position: absolute;
+        display: block;
+        top: 0.75em;
+        right: 0.5em;
+        font-weight: bold;
+        font-size: 0.7em;
+        min-width: 24px;
+        text-align: center;
+        color: white;
+    }
+}
+
+.infoCircles {
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    display: flex;
+    align-items: center;
+
+    & > * {
+        margin-right: 2px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.lightBackgroundImage {
+    @include imageBlock;
+}
+
+.darkBackgroundImage {
+    @include imageBlock;
+
+    background: radial-gradient(
+        102.58% 102.58% at 50% 50%,
+        rgba(255, 255, 255, 0.3) 0%,
+        rgba(255, 255, 255, 0.1) 100%
+    );
+}
+
+.greenBackgroundImage {
+    @include imageBlock;
+    background: radial-gradient(
+        102.58% 102.58% at 50% 50%,
+        rgba(lightgreen, 0.4) 0%,
+        rgba(lightgreen, 0.1) 100%
+    );
+}

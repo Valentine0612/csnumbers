@@ -1,0 +1,23 @@
+@import "../../../defaultStyles/button.scss";
+@import "../../../defaultStyles/colors.scss";
+
+.addProductButton {
+    @include button;
+    font-weight: normal;
+    font-size: 1.2em;
+    padding: 1em 3em;
+    margin-bottom: 20px;
+}
+
+.addProductButton {
+    background-color: transparent;
+    border: 1px dashed $orange-color;
+    color: $orange-color;
+    max-width: 250px;
+
+    &:hover {
+        background-color: rgba($color: white, $alpha: 0.1);
+        border: 1px dashed white;
+        color: white;
+    }
+}

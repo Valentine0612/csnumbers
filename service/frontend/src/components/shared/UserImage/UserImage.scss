@@ -1,0 +1,93 @@
+@import "../../../defaultStyles/colors.scss";
+
+.userWithoutTeam,
+.userTerrorist,
+.userCounterTerrorist,
+.userWithoutTeamCircle,
+.userTerroristCircle,
+.userCounterTerroristCircle {
+    position: relative;
+    width: 100%;
+    padding-bottom: calc(100% - 4px);
+    border-radius: 10px;
+
+    img {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+    }
+
+    span {
+        display: block;
+        position: absolute;
+        top: -0.6em;
+        right: -0.6em;
+        width: 1.75em;
+        height: 1.75em;
+        content: "";
+        background-size: 1.75em 1.75em;
+        background-position: 50% 50%;
+        border-radius: 100%;
+    }
+}
+
+.userWithoutTeamCircle,
+.userTerroristCircle,
+.userCounterTerroristCircle {
+    border-radius: 100%;
+
+    img {
+        border-radius: 100%;
+    }
+
+    span {
+        top: unset;
+        right: 0;
+        bottom: 0;
+    }
+}
+
+.userCounterTerrorist,
+.userCounterTerroristCircle {
+    border: 2px solid rgba($color: #0890cd, $alpha: 0.5);
+    box-shadow: 0 4px 15px rgba($color: #0890cd, $alpha: 0.25);
+
+    span {
+        background-image: url("../../../images/png/counterTerroristIcon.png");
+        box-shadow: 0px 4px 20px #0890cd;
+    }
+}
+.userTerrorist,
+.userTerroristCircle {
+    border: 2px solid rgba($color: $orange-color, $alpha: 0.5);
+    box-shadow: 0 4px 15px rgba($color: $orange-color, $alpha: 0.25);
+
+    span {
+        background-image: url("../../../images/png/terroristIcon.png");
+        box-shadow: 0px 4px 20px $orange-color;
+    }
+}
+
+.userCounterTerrorist,
+.userCounterTerroristCircle {
+    border: 2px solid rgba($color: #0890cd, $alpha: 0.5);
+    box-shadow: 0 4px 15px rgba($color: #0890cd, $alpha: 0.25);
+
+    span {
+        background-image: url("../../../images/png/counterTerroristIcon.png");
+        box-shadow: 0px 4px 20px #0890cd;
+    }
+}
+
+.userWithoutTeam,
+.userWithoutTeamCircle {
+    border: 2px solid rgba($color: white, $alpha: 0.5);
+    box-shadow: 0 4px 15px rgba($color: white, $alpha: 0.25);
+
+    span {
+        background-image: url("../../../images/png/terroristIcon.png");
+        box-shadow: 0px 4px 20px white;
+    }
+}

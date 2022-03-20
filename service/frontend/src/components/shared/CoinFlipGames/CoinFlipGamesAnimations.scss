@@ -1,0 +1,21 @@
+.gameItemAppear {
+    opacity: 0;
+    transform: translateX(300px);
+}
+
+.gameItemAppearActive {
+    opacity: 1;
+    transform: translateX(0px);
+    transition: 300ms ease-in;
+}
+
+.gameItemExit {
+    opacity: 1;
+    transform: translateX(0px);
+}
+
+.gameItemExitActive {
+    opacity: 0;
+    transform: translateX(300px);
+    transition: 300ms ease-in;
+}

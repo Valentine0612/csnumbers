@@ -1,0 +1,48 @@
+@import "../../../defaultStyles/colors.scss";
+
+.gamesList {
+    padding: 0 0 20px;
+    overflow-x: hidden;
+}
+
+.gamesColumns {
+    display: flex;
+    align-items: center;
+    height: 4em;
+    border-bottom: 1px solid $orange-color;
+    padding: 0 30px;
+    text-align: center;
+
+    .playerColumn {
+        width: 160px;
+        margin-right: 30px;
+    }
+
+    // .gunColumn {
+    //     width: 128px;
+    // }
+}
+
+@media (max-width: 940px) {
+    .gamesColumns {
+        display: none;
+    }
+
+    .gamesList {
+        padding: 20px 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 20px;
+        row-gap: 20px;
+    }
+}
+
+@media (max-width: 510px) {
+    .gamesList {
+        display: block;
+
+        & > div {
+            margin-bottom: 20px;
+        }
+    }
+}

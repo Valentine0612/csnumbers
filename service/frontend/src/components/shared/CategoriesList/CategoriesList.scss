@@ -1,0 +1,72 @@
+@import "../../../defaultStyles/button.scss";
+@import "../../../defaultStyles/colors.scss";
+
+@mixin category {
+    @include button;
+    margin-right: 15px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+@mixin categoriesList {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+
+    .category,
+    .addCategory {
+        @include category;
+        border-width: 1px;
+        background-color: transparent;
+    }
+
+    .selectedCategory {
+        @include category;
+        border: 1px solid $orange-color;
+
+        &:hover {
+            border-color: transparent;
+        }
+    }
+
+    .category {
+        border-style: solid;
+    }
+
+    .addCategory {
+        border-style: dashed;
+    }
+}
+
+.lightBackgroundlist {
+    @include categoriesList;
+
+    .category,
+    .addCategory {
+        border-color: white;
+
+        &:hover {
+            background-color: rgba($color: white, $alpha: 0.2);
+        }
+    }
+}
+
+.darkBackgroundList {
+    @include categoriesList;
+
+    .category,
+    .addCategory {
+        color: $bg-main-color;
+        border-color: $bg-main-color;
+
+        &:hover {
+            background-color: rgba($color: $bg-main-color, $alpha: 0.1);
+        }
+    }
+
+    .selectedCategory {
+        &:hover {
+            background-color: $dark-orange-color;
+        }
+    }
+}

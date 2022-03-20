@@ -1,0 +1,23 @@
+@import "../../../defaultStyles/colors.scss";
+
+.errorsList {
+    padding: 20px 30px 20px 26px;
+    border-left: 4px solid $orange-color;
+    background-color: rgba($color: $orange-color, $alpha: 0.5);
+    color: white;
+    text-align: left;
+    font-weight: bold;
+
+    li {
+        margin-bottom: 10px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &::before {
+            content: "-";
+            margin-right: 10px;
+        }
+    }
+}

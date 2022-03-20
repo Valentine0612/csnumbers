@@ -1,0 +1,13 @@
+@import "../../../defaultStyles/colors.scss";
+
+.item {
+    text-align: center;
+}
+
+.count {
+    display: block;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: $dark-orange-color;
+    text-shadow: 0px 4px 4px rgba($color: white, $alpha: 0.15);
+}

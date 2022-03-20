@@ -1,0 +1,57 @@
+@import "../../../defaultStyles/button.scss";
+@import "../../../defaultStyles/colors.scss";
+@import "../../../defaultStyles/input-text.scss";
+
+.view {
+    padding: 20px 30px;
+}
+
+.button {
+    @include button;
+    min-width: 160px;
+}
+
+.input,
+.textarea {
+    @include input-text;
+}
+
+.errorInput,
+.errorTextarea {
+    @include error-input-text;
+}
+
+.textarea,
+.errorTextarea {
+    resize: none;
+    height: 160px;
+    margin-bottom: 20px;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+
+    input[type="checkbox"] {
+        margin: 0 1em;
+    }
+
+    a {
+        color: $orange-color;
+    }
+}
+
+.inputsBox {
+    display: flex;
+    margin-bottom: 20px;
+
+    input:first-child {
+        margin-right: 20px;
+    }
+}
+
+.submitBlock {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

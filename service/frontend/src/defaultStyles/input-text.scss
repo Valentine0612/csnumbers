@@ -1,0 +1,28 @@
+@import "./colors.scss";
+
+@mixin input-text {
+    display: block;
+    width: 100%;
+    border: none;
+    padding: 20px 30px;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: inherit;
+    color: white;
+    background-color: rgba($color: white, $alpha: 0.5);
+
+    &::placeholder {
+        color: white;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+@mixin error-input-text {
+    @include input-text;
+    background-color: rgba($color: $orange-color, $alpha: 0.3);
+    border-left: 4px solid $orange-color;
+    padding-left: 26px;
+}

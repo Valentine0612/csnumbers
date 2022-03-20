@@ -1,0 +1,19 @@
+@import "./colors.scss";
+
+@mixin customIcon {
+    content: "!";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2em;
+    height: 2em;
+    background-color: white;
+    border-radius: 100%;
+    color: $bg-main-color;
+    text-align: center;
+}
+
+@mixin fontAwesomeIcon {
+    width: 2em !important;
+    height: 2em !important;
+}

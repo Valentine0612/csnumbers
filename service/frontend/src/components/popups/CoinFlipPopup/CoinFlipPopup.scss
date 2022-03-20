@@ -1,0 +1,313 @@
+@import "../../../defaultStyles/colors.scss";
+@import "../../../defaultStyles/button.scss";
+
+.gameId {
+    font-weight: bold;
+    text-align: left;
+    font-size: 1.2em;
+    margin-bottom: 60px;
+}
+
+.gameBlock {
+    display: flex;
+    justify-content: space-between;
+
+    .gameUserBlock {
+        width: calc(50% - 10px);
+        display: flex;
+        flex-direction: column;
+
+        &:first-child {
+            .gameSideCounterTerrorist,
+            .gameSideTerrorist {
+                flex-direction: row;
+
+                .userImage {
+                    margin-right: 20px;
+                }
+
+                .userName {
+                    text-align: left;
+                }
+            }
+        }
+
+        &:last-child {
+            .gameSideCounterTerrorist,
+            .gameSideTerrorist {
+                flex-direction: row-reverse;
+
+                .userImage {
+                    margin-left: 20px;
+                }
+
+                .userName {
+                    text-align: right;
+                }
+            }
+        }
+
+        .gameSideCounterTerrorist,
+        .gameSideTerrorist {
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+
+            .userImage {
+                min-width: 100px;
+                display: block;
+            }
+
+            .userName {
+                font-weight: bold;
+                font-size: 1.2em;
+            }
+        }
+
+        .gameSideCounterTerrorist {
+            background-color: rgba($color: $purple-color, $alpha: 0.2);
+        }
+
+        .gameSideTerrorist {
+            background-color: rgba($color: $orange-color, $alpha: 0.5);
+        }
+
+        .productBlock,
+        .loginBlock,
+        .chooseProductBlock,
+        .waitOpponentBlock {
+            flex: 1 0 auto;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: rgba($color: #ffffff, $alpha: 0.05);
+        }
+
+        .productBlock {
+            .productItem {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .productImageAndName {
+                display: flex;
+                align-items: center;
+                margin-right: 20px;
+
+                .productImage {
+                    flex: 0 0 auto;
+                    width: 100px;
+                    margin-right: 20px;
+                }
+
+                .productName {
+                    display: block;
+                    flex: 0 1 auto;
+                    text-align: left;
+
+                    span {
+                        display: block;
+                        font-weight: bold;
+                        font-size: 1.1em;
+                        margin-bottom: 4px;
+                    }
+                }
+            }
+
+            .productPrice {
+                font-weight: bold;
+
+                span {
+                    color: $orange-color;
+                }
+            }
+        }
+
+        .loginBlock {
+            .loginBlockTitle {
+                font-weight: bold;
+                margin-bottom: 20px;
+                font-size: 1.1em;
+            }
+
+            .loginBlockButton {
+                @include button;
+                margin: 0 auto;
+                min-width: 120px;
+            }
+        }
+
+        .chooseProductBlock {
+            .chooseProductTitle {
+                font-weight: bold;
+                text-align: left;
+                margin-bottom: 12px;
+            }
+
+            .productList {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+                column-gap: 20px;
+                row-gap: 20px;
+            }
+
+            .joinGameButton {
+                @include button;
+                width: 100%;
+            }
+        }
+
+        .waitOpponentBlock {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            .waitOpponentTitle {
+                margin-bottom: 12px;
+                font-weight: bold;
+            }
+
+            .waitOpponentButton {
+                @include button;
+                min-width: 120px;
+            }
+        }
+    }
+}
+
+.gameStatus {
+    position: absolute;
+    width: 200px;
+    top: -50px;
+    left: calc(50% - 100px);
+
+    .gameStatusImage {
+        width: 120px;
+        height: 120px;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 2px;
+        border-radius: 50%;
+        // box-shadow: 0px 4px 20px rgba(255, 255, 255, 0.5);
+    }
+
+    .gameStatusCounterWrapper {
+        position: relative;
+        width: 120px;
+        height: 120px;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 2px;
+        // box-shadow: 0px 4px 20px rgba(255, 255, 255, 0.5);
+
+        .gameStatusCounter {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 4.2em;
+            border: 4px solid #c0892f;
+            color: $orange-color;
+            background-color: $bg-main-color;
+        }
+    }
+
+    .gameStatusName {
+        font-weight: bold;
+        height: 20px;
+    }
+}
+
+@media (max-width: 780px) {
+    .gameBlock {
+        display: block;
+
+        .gameUserBlock {
+            width: 100%;
+            margin-bottom: 20px;
+
+            &:last-child {
+                margin-bottom: 0;
+
+                .gameSideCounterTerrorist,
+                .gameSideTerrorist {
+                    flex-direction: row;
+
+                    .userImage {
+                        margin-left: 0;
+                        margin-right: 20px;
+                    }
+
+                    .userName {
+                        text-align: left;
+                    }
+                }
+            }
+        }
+
+        .chooseProductBlock {
+            .productsListBlock {
+                display: flex;
+                flex-direction: column-reverse;
+            }
+
+            .joinGameButton {
+                margin-bottom: 12px;
+            }
+
+            .productList {
+                margin-bottom: 0 !important;
+            }
+        }
+    }
+}
+
+@media (max-width: 460px) {
+    .gameId {
+        margin-bottom: 12px;
+    }
+
+    .gameStatus {
+        position: static;
+        margin: 0 auto 16px;
+    }
+
+    .productBlock {
+        .productItem {
+            flex-direction: column;
+        }
+
+        .productImageAndName {
+            flex-direction: column;
+            margin-right: 0 !important;
+
+            .productImage {
+                margin-right: 0 !important;
+                margin-bottom: 8px;
+            }
+
+            .productName {
+                margin-bottom: 8px;
+            }
+        }
+    }
+
+    .gameSideCounterTerrorist,
+    .gameSideTerrorist {
+        flex-direction: column !important;
+
+        .userImage {
+            margin-right: 0 !important;
+            margin-bottom: 12px;
+        }
+    }
+}

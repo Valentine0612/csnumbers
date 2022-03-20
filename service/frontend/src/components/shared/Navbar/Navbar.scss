@@ -1,0 +1,132 @@
+@import "../../../defaultStyles/colors.scss";
+@import "../../../defaultStyles/customIcons.scss";
+@import "../NavbarList/NavbarList.scss";
+
+@mixin navbar {
+    height: 100vh;
+    background-color: $bg-main-color;
+    max-width: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 0 40px;
+
+    @media (max-width: 940px) {
+        background-color: transparent;
+        height: auto;
+        max-width: none;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+}
+
+.navbar {
+    @include navbar;
+}
+
+.rollUpButton {
+    @include listItem;
+}
+
+.rolledUpNavbar {
+    @include navbar;
+
+    .rollUpButton,
+    .rollUpButton *,
+    ul li *,
+    ul li a:hover,
+    ul li a:hover *,
+    ul li div:hover,
+    ul li div:hover * {
+        margin: 0;
+    }
+
+    .rollUpButton {
+        @include rolledUpItem;
+    }
+}
+
+.logo {
+    margin: 10px 10px 20px;
+
+    .logoCSGames,
+    .logoCSGO {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .logoCSGames {
+        margin-bottom: 16px;
+    }
+
+    .logoCSGO img {
+        height: 36px;
+    }
+}
+
+.customIcon {
+    @include customIcon;
+    font-weight: bold;
+}
+
+.headerCashInfo {
+    display: none;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 940px) {
+    .rollUpButton,
+    .logoCSGames,
+    .logoCSGO,
+    .logoText,
+    h1 {
+        display: none;
+    }
+
+    .rolledUpNavbar {
+        span,
+        .logoText {
+            display: block;
+        }
+    }
+
+    .rolledUpNavbar ul li a span,
+    .rolledUpNavbar ul li a:hover span,
+    .rolledUpNavbar ul li div span,
+    .rolledUpNavbar ul li div:hover span {
+        margin-left: 20px;
+    }
+
+    .rolledUpNavbar ul {
+        margin: 0;
+    }
+
+    .navbar,
+    .rolledUpNavbar {
+        ul li a,
+        ul li a:hover,
+        ul li div,
+        ul li div:hover {
+            justify-content: center;
+            margin-right: 0;
+        }
+    }
+}
+
+@media (max-width: 940px) {
+    .rolledUpNavbar {
+        padding-top: 20px;
+    }
+
+    .rolledUpNavbar .rollUpButton {
+        @include listItem;
+    }
+}
+
+@media (max-width: 680px) {
+    .headerCashInfo {
+        display: flex;
+    }
+}

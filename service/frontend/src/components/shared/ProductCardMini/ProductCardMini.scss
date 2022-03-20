@@ -1,0 +1,28 @@
+@import "../../../defaultStyles/colors.scss";
+
+.item {
+    text-align: left;
+    cursor: pointer;
+}
+
+.productImageWrapper {
+    position: relative;
+    width: 100%;
+    margin-bottom: 8px;
+
+    .price {
+        position: absolute;
+        left: 10px;
+        bottom: 10px;
+        font-weight: bold;
+
+        span {
+            color: $orange-color;
+        }
+    }
+}
+
+.productName {
+    padding: 0 10px;
+    font-weight: bold;
+}
